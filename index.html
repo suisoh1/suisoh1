@@ -5,14 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>未定</title>
-
 </head>
 
 <body>
     <h1>PER=想定金利/(想定金利-来期予想/今期予想)</h1>
     <p>Javascript使って計算できるようにする</p>
 
-    <label>金利:<input type="text" size ="40" value="金利を入力してください"></label>
+    <label>金利:
+        <input type="text" size="40" id="nameText">
+    </label>
+    <input type="button" value="Check" id="checkButton">
+
+    <p id="msg"></p>
+
+    <script>
+
+        function butotnClick() {
+            msg.innerText = '金利:' + nameText.value;
+        }
+
+        let nameText = document.getElementById('nameText');
+        nameText.value = '金利を入力';
+        let msg = document.getElementById('msg');
+
+        let checkButton = document.getElementById('checkButton');
+        checkButton.addEventListener('click', butotnClick);
+
+
+    </script>
 </body>
 
 </html>
