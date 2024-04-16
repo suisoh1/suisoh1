@@ -21,8 +21,8 @@
 
 <button onclick="calculate()">計算する</button><br><br>
 
-<label for="outputC">C:</label>
-<input type="text" id="outputC" disabled>
+<label for="outputD">D:</label>
+<input type="text" id="outputD" disabled>
 
 <script>
 
@@ -39,13 +39,12 @@ function calculate() {
     }
 
     // AとBの値を足し合わせてCにセット
-    var outputC = parseFloat(inputA) + parseFloat(inputB);
-    document.getElementById("outputC").value = outputC;
+    var outputD = parseFloat(inputA) / (parseFloat(inputA) -  (parseFloat(inputC) / parseFloat(inputB)));
+    document.getElementById("outputD").value = outputD;
 }
 
 </script>
 
 </body>
 </html>
-
 
