@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>未定</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>計算機</title>
 </head>
-
 <body>
-    <h1>PER=想定金利/(想定金利-来期予想/今期予想)</h1>
-    <p>Javascript使って計算できるようにする</p>
-
-    <label>金利:
-        <input type="text" size="40" id="nameText">
-    </label>
-    <input type="button" value="Check" id="checkButton">
-
-    <p id="msg"></p>
-
-    <script>
-
-        function butotnClick() {
-            msg.innerText = '金利:' + nameText.value;
-        }
-
-        let nameText = document.getElementById('nameText');
-        nameText.value = '金利を入力';
-        let msg = document.getElementById('msg');
-
-        let checkButton = document.getElementById('checkButton');
-        checkButton.addEventListener('click', butotnClick);
+<h1>PER=想定金利/(想定金利-来期予想/今期予想)</h1>
+<p>Javascript使って計算できるようにする</p>
 
 
-    </script>
+<label for="inputA">A:</label>
+<input type="number" id="inputA"><br><br>
+
+<label for="inputB">B:</label>
+<input type="number" id="inputB"><br><br>
+
+<button onclick="calculate()">計算する</button><br><br>
+
+<label for="outputC">C:</label>
+<input type="text" id="outputC" disabled>
+
+<script>
+
+function calculate() {
+    // AとBの値を取得
+    var inputA = document.getElementById("inputA").value;
+    var inputB = document.getElementById("inputB").value;
+
+    // 空の場合や無効な入力の場合のチェック
+    if (inputA === "" || inputB === "" || isNaN(inputA) || isNaN(inputB)) {
+        alert("有効な数値を入力してください。");
+        return;
+    }
+
+    // AとBの値を足し合わせてCにセット
+    var outputC = parseFloat(inputA) + parseFloat(inputB);
+    document.getElementById("outputC").value = outputC;
+}
+
+</script>
+
 </body>
-
 </html>
+
